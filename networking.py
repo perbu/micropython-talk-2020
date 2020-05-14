@@ -7,7 +7,7 @@ def wlan_connect():
     sta = network.WLAN(network.STA_IF)
     sta.active(True)
     if not sta.isconnected():
-        print('Connecting')
+        print('Connecting', end='')
         sta.connect('ssid', 'password')
         while not sta.isconnected():
             time.sleep(0.1)

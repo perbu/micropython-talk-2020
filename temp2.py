@@ -41,16 +41,18 @@ def wlan_connect():
         print('Connected!')
     print('Network:', sta.ifconfig())
 
+
 wlan_connect()
 
-mqtt_client = client = MQTTClient(uuid, 
-		mqtt_server)
+mqtt_client = client = MQTTClient(uuid,
+                                  mqtt_server)
 mqtt_client.connect()
 
+
 def send_mqtt(temp, pressure):
-    obj = { 
-        'temperature' : temp,
-        'pressure' : pressure
+    obj = {
+        'temperature': temp,
+        'pressure': pressure
     }
     json_str = ujson.dumps(obj)
     mqtt_client.publish(topic, json_str)
@@ -82,11 +84,11 @@ else:
 while True:
     if bmp_conn:
         print("BMP280 values:")
-        temp = bmp.temperature       
+        temp = bmp.temperature
         pr = bmp.pressure
         print("temp:", temp)
         print("pr:", pr)
-        send_mqtt(temp,pr)
+        send_mqtt(temp, pr)
 
     if oled_conn:
         oled.fill(0)
