@@ -52,8 +52,8 @@ while True:
     if oled_conn:
         oled.fill(0)
         if bmp_conn:
-            oled.text("Temperature: {}".format(temp), 0, 0)
-            oled.text("Pressure: {}".format(pr), 0, 10)
+            oled.text("Temp: {}".format(temp), 0, 0)
+            oled.text("Pr: {}".format(pr), 0, 10)
             oled.show()
         else:
             oled.text("BMP N/A", 0, 0)

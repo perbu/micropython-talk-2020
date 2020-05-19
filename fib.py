@@ -14,3 +14,4 @@ foo = 15
 bar = 25
 print(f"This code was just run. Foo is {foo} and bar is {bar} and foo/bar is {foo/bar}");   
 # Notice that we divided two integers and got a float.
+# Also - the string formatting  stuff is just beautiful.
